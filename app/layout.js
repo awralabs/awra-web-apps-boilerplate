@@ -2,7 +2,6 @@ import "./globals.css";
 
 import { siteBasePath, siteName, tagline } from "@/lib/constants";
 
-import Aos from "@/components/ui/Aos";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { Inter } from "next/font/google";
@@ -25,8 +24,8 @@ export const metadata = {
   applicationName: "Next.js",
   referrer: "origin-when-cross-origin",
   keywords: [siteName, tagline],
-  creator: "Jishnu Raj",
-  publisher: "Jishnu Raj",
+  creator: "Awra Labs",
+  publisher: "Awra Labs",
   formatDetection: {
     email: false,
     address: false,
@@ -40,7 +39,7 @@ export const metadata = {
     locale: "en_US",
     type: "article",
     publishedTime: new Date().getTime(),
-    authors: ["Jishnu Raj"],
+    authors: ["Awra Labs"],
   },
   twitter: {
     card: "summary_large_image",
@@ -73,9 +72,8 @@ export default function RootLayout({ children }) {
         )}
       >
         <Header />
-        <main className="flex-grow bg-white">{children}</main>
+        <main className="h-full bg-white">{children}</main>
         <Footer />
-        <Aos />
       </body>
     </html>
   );

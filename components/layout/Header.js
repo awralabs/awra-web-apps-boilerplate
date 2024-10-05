@@ -3,7 +3,7 @@ import { Expand } from "lucide-react";
 import { Fragment } from "react";
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
-import Ribbon from "@/components/layout/Ribbon";
+import { siteName } from "@/lib/constants";
 
 export const menuLinks = [
   {
@@ -31,7 +31,6 @@ export const menuLinks = [
 export default function Header() {
   return (
     <Fragment>
-      <Ribbon />
       <header className="bg-white shadow-2xl border-b">
         <PcMenu />
         <MobileMenu />
@@ -61,14 +60,9 @@ const PcMenu = ({ className }) => {
   );
 };
 
-const Branding = () => (
-  <Link href="/">
-    <h1 className="text-3xl font-semibold text-primary uppercase leading-6 flex gap-1 items-center">
-      <Expand size={50} />
-      INFO
-      <br />
-      PERFORMANCE
-    </h1>
+export const Branding = () => (
+  <Link href="/" className="text-2xl font-bold text-primary">
+    {siteName} "Boilerplate"
   </Link>
 );
 

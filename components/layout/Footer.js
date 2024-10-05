@@ -1,7 +1,7 @@
 import { Facebook, Linkedin, Target, Twitter, Youtube } from "lucide-react";
 
 import Link from "next/link";
-import { createSlug } from "@/lib/utils";
+import { createSlug } from "@/utils";
 
 export default function Footer() {
   return (

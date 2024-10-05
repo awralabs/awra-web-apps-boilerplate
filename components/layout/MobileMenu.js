@@ -1,7 +1,8 @@
 "use client";
 
-import { Expand, MenuIcon, XIcon } from "lucide-react";
+import { MenuIcon, XIcon } from "lucide-react";
 import { Fragment, useEffect, useState } from "react";
+import { Branding } from "@/components/layout/Header";
 
 import Button from "@/components/ui/Button";
 import Link from "next/link";
@@ -62,14 +63,3 @@ export default function MobileMenu({ className }) {
     </Fragment>
   );
 }
-
-export const Branding = () => (
-  <Link href="/">
-    <h1 className="text-xl font-semibold text-primary uppercase leading-5 flex gap-1 items-center">
-      <Expand size={48} />
-      INFO
-      <br />
-      PERFORMANCE
-    </h1>
-  </Link>
-);
