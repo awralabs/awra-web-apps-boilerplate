@@ -3,7 +3,7 @@ import { Facebook, Linkedin, Target, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
 import { createSlug } from "@/utils";
 
-export default function Footer() {
+export default function Footer(): JSX.Element {
   return (
     <footer className="py-8 bg-gray-100">
       <section className="container grid grid-flow-row gap-12">
@@ -16,14 +16,14 @@ export default function Footer() {
   );
 }
 
-const TitleSeperator = () => (
+const TitleSeperator = (): JSX.Element => (
   <div className="flex gap-2 items-center">
     <h6 className="text-primary">INFORPERFORMANCE</h6>
     <hr className="w-full border-black/20" />
   </div>
 );
 
-const FooterMenu = () => {
+const FooterMenu = (): JSX.Element => {
   const footerLinks = [
     {
       title: "Products & Solution",
@@ -89,7 +89,7 @@ const FooterMenu = () => {
   );
 };
 
-const SocialLinks = () => {
+const SocialLinks = (): JSX.Element => {
   const socialLinks = [
     {
       media: "Facebook",
@@ -133,7 +133,7 @@ const SocialLinks = () => {
   );
 };
 
-const CopyRight = () => {
+const CopyRight = (): JSX.Element => {
   const currentYear = new Date().getFullYear();
   return (
     <p className="text-sm text-black/30">{`© ${currentYear} All rights reserved.`}</p>

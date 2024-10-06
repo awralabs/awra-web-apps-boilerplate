@@ -1,5 +1,4 @@
 import Button from "@/components/ui/Button";
-import { Expand } from "lucide-react";
 import { Fragment } from "react";
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
@@ -28,7 +27,7 @@ export const menuLinks = [
   },
 ];
 
-export default function Header() {
+export default function Header(): JSX.Element {
   return (
     <Fragment>
       <header className="bg-white shadow-2xl border-b">
@@ -39,7 +38,7 @@ export default function Header() {
   );
 }
 
-const PcMenu = ({ className }) => {
+const PcMenu = () => {
   return (
     <menu className="container py-4 hidden md:flex items-center justify-between gap-4">
       <Branding />

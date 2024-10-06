@@ -2,16 +2,20 @@ import { ImageResponse } from "next/og";
 
 export const contentType = "image/png";
 export const runtime = "edge";
-export const alt = "Infoperformance";
+export const alt = "Awralabs";
 export const size = {
   width: 1200,
   height: 630,
 };
 
 export default async function OGImage() {
-  const background = await fetch(
-    new URL("../public/images/og-background.jpg", import.meta.url)
-  ).then((res) => res.arrayBuffer());
+  const backgroundPath = new URL(
+    "/images/og-background.jpg",
+    "https://awralabs.com"
+  );
+  const background = await fetch(backgroundPath).then((res) =>
+    res.arrayBuffer()
+  );
 
   const imageMarkDown = (
     <div
@@ -29,7 +33,7 @@ export default async function OGImage() {
       }}
     >
       <img
-        src={background}
+        src={URL.createObjectURL(new Blob([background]))}
         alt={alt}
         style={{
           objectFit: "cover",

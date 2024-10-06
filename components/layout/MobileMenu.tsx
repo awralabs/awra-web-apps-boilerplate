@@ -9,7 +9,7 @@ import Link from "next/link";
 import ShowWhen from "@/components/ui/ShowWhen";
 import { menuLinks } from "@/components/layout/Header";
 
-export default function MobileMenu({ className }) {
+export default function MobileMenu(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen((isOpen) => !isOpen);
 

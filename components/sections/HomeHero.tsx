@@ -1,4 +1,4 @@
-export default function HomeHero() {
+export default function HomeHero(): JSX.Element {
   const techstack = [
     "Next.js 15-RC",
     "React 19",

@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { Inter } from "next/font/google";
 import classNames from "classnames";
+import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +14,7 @@ export const viewport = {
   themeColor: "#dc2626",
 };
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     template: `%s | ${siteName}`,
     default: siteName,
@@ -38,7 +39,7 @@ export const metadata = {
     siteName: siteName,
     locale: "en_US",
     type: "article",
-    publishedTime: new Date().getTime(),
+    publishedTime: new Date().toISOString(),
     authors: ["Awra Labs"],
   },
   twitter: {
@@ -59,7 +60,6 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
-  sitemap: `${siteBasePath}/sitemap.xml`,
 };
 
 export default function RootLayout({ children }) {

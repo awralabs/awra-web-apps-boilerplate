@@ -6,6 +6,6 @@ export const metadata = {
   description: tagline,
 };
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return <HomeHero />;
 }
