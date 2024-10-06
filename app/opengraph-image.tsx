@@ -2,20 +2,19 @@ import { ImageResponse } from "next/og";
 
 export const contentType = "image/png";
 export const runtime = "edge";
-export const alt = "Awralabs";
+export const alt = "Awra Labs";
 export const size = {
   width: 1200,
   height: 630,
 };
 
 export default async function OGImage() {
-  const backgroundPath = new URL(
-    "/images/og-background.jpg",
-    "https://awralabs.com"
-  );
-  const background = await fetch(backgroundPath).then((res) =>
-    res.arrayBuffer()
-  );
+  const backgroundBuffer = await fetch(
+    new URL("./opengraph-image.png", import.meta.url)
+  ).then((res) => res.arrayBuffer());
+
+  const backgroundBlob = new Blob([backgroundBuffer], { type: "image/png" });
+  const backgroundUrl = URL.createObjectURL(backgroundBlob);
 
   const imageMarkDown = (
     <div
@@ -33,7 +32,7 @@ export default async function OGImage() {
       }}
     >
       <img
-        src={URL.createObjectURL(new Blob([background]))}
+        src={backgroundUrl}
         alt={alt}
         style={{
           objectFit: "cover",
@@ -52,10 +51,10 @@ export default async function OGImage() {
           paddingLeft: "8px",
           paddingRight: "8px",
           position: "absolute",
-          backgroundColor: "#dc2626",
+          backgroundColor: "#000000",
         }}
       >
-        AWRALABS
+        AWRA LABS
       </h3>
       <div
         style={{
@@ -65,7 +64,7 @@ export default async function OGImage() {
           display: "flex",
           position: "absolute",
           flexDirection: "column",
-          backgroundColor: "rgba(0,0,0,0.3)",
+          backgroundColor: "rgba(0,0,0,0.8)",
         }}
       >
         <h1
@@ -80,12 +79,13 @@ export default async function OGImage() {
           style={{
             width: "100%",
             display: "flex",
-            bottom: "5rem",
+            bottom: "1rem",
             justifyContent: "space-around",
           }}
         >
-          <p>www.linkedin.com/</p>
-          <p>www.awralabs.com</p>
+          <p>linkedin.com/awralabs</p>
+          <p>instagram.com/awralabs</p>
+          <p>github.com/awralabs</p>
         </div>
       </div>
     </div>

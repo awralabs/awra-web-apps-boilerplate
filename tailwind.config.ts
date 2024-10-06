@@ -1,26 +1,29 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+
+const config: Config = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: "2rem",
-        sm: "2rem",
-        lg: "3rem",
-        xl: "4rem",
-        "2xl": "5rem",
-      },
-    },
     extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "2rem",
+          sm: "2rem",
+          lg: "3rem",
+          xl: "4rem",
+          "2xl": "5rem",
+        },
+      },
       colors: {
-        primary: "#dc2626",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
       },
     },
   },
   plugins: [],
 };
+export default config;

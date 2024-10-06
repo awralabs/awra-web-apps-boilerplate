@@ -2,12 +2,10 @@
 
 import { MenuIcon, XIcon } from "lucide-react";
 import { Fragment, useEffect, useState } from "react";
-import { Branding } from "@/components/layout/Header";
 
-import Button from "@/components/ui/Button";
 import Link from "next/link";
-import ShowWhen from "@/components/ui/ShowWhen";
-import { menuLinks } from "@/components/layout/Header";
+import { Branding, menuLinks } from "@/components/layout/Navbar";
+import RenderWhen from "@/components/ui/RenderWhen";
 
 export default function MobileMenu(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,11 +26,11 @@ export default function MobileMenu(): JSX.Element {
     <Fragment>
       <menu className="flex md:hidden container py-5 w-full justify-between items-center">
         <Branding />
-        <button onClick={toggleMenu} className="text-primary">
-          <MenuIcon size={32} />
+        <button onClick={toggleMenu}>
+          <MenuIcon size={32} className="text-black" />
         </button>
       </menu>
-      <ShowWhen when={isMenuOpen}>
+      <RenderWhen when={isMenuOpen}>
         <div className="container py-16 absolute top-0 left-0 z-10 h-screen w-screen bg-white">
           <div className="flex justify-end items-center">
             <button onClick={toggleMenu} className="text-primary">
@@ -56,10 +54,9 @@ export default function MobileMenu(): JSX.Element {
                 </li>
               ))}
             </ul>
-            <Button>Get in Touch</Button>
           </div>
         </div>
-      </ShowWhen>
+      </RenderWhen>
     </Fragment>
   );
 }

@@ -1,14 +1,18 @@
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import { siteName, tagline, siteBasePath } from "@/lib/constants";
 import "./globals.css";
 
-import { siteBasePath, siteName, tagline } from "@/lib/constants";
-
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
-import { Inter } from "next/font/google";
-import classNames from "classnames";
-import { Metadata } from "next";
-
-const inter = Inter({ subsets: ["latin"] });
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
+});
 
 export const viewport = {
   themeColor: "#dc2626",
@@ -25,8 +29,8 @@ export const metadata: Metadata = {
   applicationName: "Next.js",
   referrer: "origin-when-cross-origin",
   keywords: [siteName, tagline],
-  creator: "Awra Labs",
-  publisher: "Awra Labs",
+  creator: "Awralabs",
+  publisher: "Awralabs",
   formatDetection: {
     email: false,
     address: false,
@@ -40,7 +44,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "article",
     publishedTime: new Date().toISOString(),
-    authors: ["Awra Labs"],
+    authors: ["Awralabs"],
   },
   twitter: {
     card: "summary_large_image",
@@ -62,18 +66,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
       <body
-        className={classNames(
-          inter.className,
-          "text-black min-h-screen flex flex-col"
-        )}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        <main className="h-full bg-white">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

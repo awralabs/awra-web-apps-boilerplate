@@ -1,7 +1,6 @@
-import { Facebook, Linkedin, Target, Twitter, Youtube } from "lucide-react";
+import { BotIcon, Github, Instagram, Linkedin } from "lucide-react";
 
 import Link from "next/link";
-import { createSlug } from "@/utils";
 
 export default function Footer(): JSX.Element {
   return (
@@ -18,7 +17,7 @@ export default function Footer(): JSX.Element {
 
 const TitleSeperator = (): JSX.Element => (
   <div className="flex gap-2 items-center">
-    <h6 className="text-primary">INFORPERFORMANCE</h6>
+    <h6 className="text-black">AWRALABS</h6>
     <hr className="w-full border-black/20" />
   </div>
 );
@@ -77,7 +76,7 @@ const FooterMenu = (): JSX.Element => {
           {links.map((link) => (
             <Link
               key={link}
-              href={`/jishnu/${createSlug(link)}`}
+              href="/"
               className="text-sm capitalize text-black/60 hover:text-black"
             >
               {link}
@@ -92,24 +91,19 @@ const FooterMenu = (): JSX.Element => {
 const SocialLinks = (): JSX.Element => {
   const socialLinks = [
     {
-      media: "Facebook",
-      Icon: Facebook,
-      url: "https://nextjs.org/",
+      media: "Instagram",
+      Icon: BotIcon,
+      url: "https://www.instagram.com/awralabs",
     },
     {
       media: "LinkedIn",
-      Icon: Linkedin,
-      url: "https://nextjs.org/",
+      Icon: BotIcon,
+      url: "https://www.linkedin.com/company/awralabs",
     },
     {
-      media: "YouTube",
-      Icon: Youtube,
-      url: "https://nextjs.org/",
-    },
-    {
-      media: "Twitter",
-      Icon: Twitter,
-      url: "https://nextjs.org/",
+      media: "GitHub",
+      Icon: BotIcon,
+      url: "https://github.com/awralabs",
     },
   ];
   return (
@@ -122,7 +116,7 @@ const SocialLinks = (): JSX.Element => {
               {
                 <Icon
                   size={42}
-                  className="border border-black/50 p-3 rounded-full hover:border-white hover:bg-black hover:text-white"
+                  className="border border-black/50 p-3 rounded-full hover:border-white hover:bg-black text-black hover:text-white"
                 />
               }
             </Link>
