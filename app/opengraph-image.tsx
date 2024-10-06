@@ -55,7 +55,7 @@ export default async function OGImage() {
           backgroundColor: "#dc2626",
         }}
       >
-        INFORPERFORMANCE
+        AWRALABS
       </h3>
       <div
         style={{
@@ -84,8 +84,8 @@ export default async function OGImage() {
             justifyContent: "space-around",
           }}
         >
-          <p>www.linkedin.com/info</p>
-          <p>www.info.com</p>
+          <p>www.linkedin.com/</p>
+          <p>www.awralabs.com</p>
         </div>
       </div>
     </div>
